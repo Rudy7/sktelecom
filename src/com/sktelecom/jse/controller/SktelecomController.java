@@ -32,7 +32,8 @@ public class SktelecomController {
 			switch(JOptionPane.showInputDialog("[MENU]?\n"
 					                          +"0. 정지\n"
 											  +"1. 개통\n"
-					                          +"2. 요금정보")) {
+					                          +"2. 목록\n"
+					                          +"3. 테스트")) {
 				  case "0":
 					  JOptionPane.showMessageDialog(null, "개통이 취소되었습니다.");
 					  
@@ -41,24 +42,20 @@ public class SktelecomController {
 			    	  phone = new PhoneBean();
 			    	  member = new MemberBean();
 			    	  phone.setName(JOptionPane.showInputDialog("1.갤럭시폰 2.아이폰"));
+			    	  phone.setName((phone.getName().equals("1")) ? "갤럭시폰" : "아이폰" ); 
 			    	  member.setName(JOptionPane.showInputDialog("who?"));
 			    		JOptionPane.showMessageDialog(null, 
 			    				service.showMessage(member,phone));
 			    	  break;
-			      case "2":
-			    	  phone = new PhoneBean();
-			    	  member = new MemberBean();
-			    	  member.setName(JOptionPane.showInputDialog("who?"));
+			      case "2":		    	  
+			    	  JOptionPane.showMessageDialog(null, service.makelist());
 			    	  
-			    	  JOptionPane.showMessageDialog(null, 
-			    				service.showMessage(member,phone));
+			    	  break;
+			      case "3":
+//			    		
 			    	  break;
 			
-			
-			}
-			
-		}
-		
-		
+			}	
+		}	
 	}
 }
