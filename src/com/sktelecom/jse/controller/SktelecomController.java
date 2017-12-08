@@ -33,7 +33,11 @@ public class SktelecomController {
 					                          +"0. 정지\n"
 											  +"1. 개통\n"
 					                          +"2. 목록\n"
-					                          +"3. 테스트")) {
+					                          +"3. 고객정보\n"
+					                          +"4. 회원찾기\n"
+					                          +"5. 변호변경\n"
+					                          +"6. 회원탈퇴\n"
+					                          +"7. test")) {
 				  case "0":
 					  JOptionPane.showMessageDialog(null, "개통이 취소되었습니다.");
 					  
@@ -49,13 +53,27 @@ public class SktelecomController {
 			    	  break;
 			      case "2":		    	  
 			    	  JOptionPane.showMessageDialog(null, service.makelist());
+			    	  break;
+			      case "3":  //고객정보
+			    	  JOptionPane.showMessageDialog(null, service.findByKey(JOptionPane.showInputDialog("고객번호?")));
+			    	  break;  //동명이인 찾기, 변호변경,  회원탈퇴
+			      case "4":
+			    	  member.setName(JOptionPane.showInputDialog("who?"));
+			    	  JOptionPane.showMessageDialog(null, service.findByName(member.getName()));
+			    	  break;
+			      case "5":   // 번호 변경
+//			    	  JOptionPane.showMessageDialog(null, service.updatePhoneNumber(JOptionPane.showInputDialog("고객번호?")));
+			    	  break;
+			      case "6":   // 회원 탈퇴
 			    	  
 			    	  break;
-			      case "3":
-//			    		
+			      case "7":
+			    	  
 			    	  break;
+			    		  
+			    	  
 			
 			}	
 		}	
-	}
+	}         //고객번호물어보고,  입력했더니.   키 작동하게.  포 이프 건다.  전화번호, 이름, 고객번호 1명만 나오게.
 }
