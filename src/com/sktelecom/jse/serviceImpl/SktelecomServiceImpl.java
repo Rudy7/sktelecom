@@ -62,16 +62,16 @@ public class SktelecomServiceImpl implements SktelecomService {
 	public String makelist() { // 이름, 커스텀넘버, 폰넘버, 
 		    String r = "";
 			for(int i=0; i<memberCount; i++){
-				String m1 = members[i].getCustomNum();
-				String m2 = members[i].getName();
-				String p1 = phones[i].getCustomNum();
-				String p2 = phones[i].getName();
-				String p3 = phones[i].getNumber();
+				String m1 = "[고객번호]" + members[i].getCustomNum() + "\t";
+				String m2 = "[이름]" + members[i].getName() + "\t";
+				String p1 = "[고객번호]" + phones[i].getCustomNum() + "\t";
+				String p2 = "[폰명]" + phones[i].getName() + "\t";
+				String p3 = "[폰번호]" + phones[i].getNumber() + "\t";
 				
 				String m = m1 + m2;
 				String p = p1 + p2 + p3;
 				if(m1.equals(p1)){
-					r += m + p;
+					r += m + p + "\n";
 		    }
 		}
 		   return r;
