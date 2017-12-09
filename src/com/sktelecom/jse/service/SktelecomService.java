@@ -11,7 +11,7 @@ public interface SktelecomService {
 	public void addUser(MemberBean member, PhoneBean phone);
 	public String createPhoneNum();
 	public String createCustomNum();
-	public String findByKey(String key);    //키는 커스터넘버를 의미한다.
+	public String findByKey(String key);    //여기서 키는 커스텀넘버를 의미한다.
 	public String findByName(String name);
 	public void updatePhoneNumber(String key);
 	public void deleteMember(String key);
